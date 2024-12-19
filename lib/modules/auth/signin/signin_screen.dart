@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import '../../../generated/assets.dart';
-import '../signin/signin_screen.dart';
-import 'signup_controller.dart';
+import '../signup/signup_controller.dart';
+import 'package:flutter_svg/svg.dart';
 
-class SignupScreen extends StatefulWidget {
-  static const routeName = "signup";
+class SigninScreen extends StatefulWidget {
+  static const routeName = "signin";
 
-  const SignupScreen({super.key});
+  const SigninScreen({super.key});
 
   @override
   State createState() => _SigninScreenState();
 }
 
-class _SigninScreenState extends StateMVC<SignupScreen> {
+class _SigninScreenState extends StateMVC<SigninScreen> {
 
   late SigninController  con ;
 
@@ -32,23 +32,8 @@ class _SigninScreenState extends StateMVC<SignupScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(Assets.signup),
+                SvgPicture.asset(Assets.signin),
                 Padding(padding: new EdgeInsets.all(22.0)),
-                TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'User Name',
-                      hintText: 'enter User Name',
-                      prefixIcon: Icon(Icons.people),
-                      border: OutlineInputBorder()
-                  ),
-            
-                  autocorrect: true,
-                  autofocus: true,
-                  keyboardType: TextInputType.text,
-                  controller: con.userName,
-            
-                ),
-                Padding(padding: new EdgeInsets.all(5.0)),
                 TextFormField(
                   decoration: InputDecoration(
                       labelText: 'Email',
@@ -61,21 +46,6 @@ class _SigninScreenState extends StateMVC<SignupScreen> {
                   autofocus: true,
                   keyboardType: TextInputType.text,
                   controller: con.email,
-            
-                ),
-               Padding(padding: new EdgeInsets.all(5.0)),
-                TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'Phone',
-                      hintText: 'enter Phone',
-                      prefixIcon: Icon(Icons.phone),
-                      border: OutlineInputBorder()
-                  ),
-            
-                  autocorrect: true,
-                  autofocus: true,
-                  keyboardType: TextInputType.text,
-                  controller: con.phone,
             
                 ),
             
@@ -100,17 +70,13 @@ class _SigninScreenState extends StateMVC<SignupScreen> {
                   width: double.infinity, // <-- match_parent
                   height: 50, // <-- match-parent
                   child:  ElevatedButton(   // MaterialButton
-                    onPressed: () =>(){}, child: Text('Sign Up')
+                    onPressed: () =>(){
+
+
+                    }, child: Text('Sign In')
                     ,style: ElevatedButton.styleFrom( foregroundColor: Colors.white,
                       backgroundColor: Colors.blue , textStyle: TextStyle(fontSize: 24) ) ,
                   ),
-                ),
-                Padding(padding: new EdgeInsets.all(5.0)),
-                Text("If You Have Accout >> Join Now .."),
-                Padding(padding: new EdgeInsets.all(5.0)),
-                GestureDetector(
-                  child: Text("Sign In" , style: TextStyle(fontSize: 18 , color: Colors.green),textAlign: TextAlign.center,),
-                onTap: ()=> Navigator.pushNamed(context,SigninScreen.routeName)
                 )
             
               ],

@@ -12,13 +12,11 @@ class SigninController extends ControllerMVC {
   static SigninController?  _this;
   SigninController._();
 
- late TextEditingController userName , email , phone , password;
+ late TextEditingController email , password;
    @override
   void initState() {
 
-      userName = TextEditingController();
       email = TextEditingController();
-      phone = TextEditingController();
       password = TextEditingController();
     super.initState();
   }
@@ -27,9 +25,7 @@ class SigninController extends ControllerMVC {
 
   @override
   void dispose() {
-    userName.dispose();
     email.dispose();
-    phone.dispose();
     password.dispose();
     super.dispose();
   }
