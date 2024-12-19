@@ -1,4 +1,4 @@
-import 'package:e_commerce_flutter/modules/auth/signin/signin_screen.dart';
+import 'package:e_commerce_flutter/modules/auth/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'modules/splash/page/splash.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: SplashScreen.routeName,
       routes: {
         SplashScreen.routeName :(context) => SplashScreen() ,
-        SigninScreen.routeName :(context) => SigninScreen() ,
+        SignupScreen.routeName :(context) => SignupScreen() ,
 
 
       }

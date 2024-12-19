@@ -1,5 +1,5 @@
+import 'package:e_commerce_flutter/modules/auth/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../../generated/assets.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -10,9 +10,12 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
-      body: Center(
-        child: Image.asset(Assets.logo),
+      backgroundColor: Colors.white,
+      body: Container(
+        child: GestureDetector(
+           child:  Center(child: Image.asset(Assets.logo)),
+          onTap: ()=> Navigator.pushNamed(context,SignupScreen.routeName),
+        )
       ),
     );
   }
